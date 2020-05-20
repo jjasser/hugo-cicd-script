@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Changing directories"
+cd /Users/jjass1105/Desktop/cyberblog
+
+echo "Throwing changes to yakav.github.io"
+hugo -d ../yakav.github.io
+
+echo "Changing directories to yakav.github.io"
+cd ../yakav.github.io
+
+echo "Adding items to staging area"
+git add --all --force
+
+echo "Committing all changes"
+git commit -m "$(date)"
+
+echo "Pushed to remote branch!"
+git push origin master --force
